@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Report</title>
+</head>
+<body>
+    <h2>Project Report</h2>
+    <table border="1">
+        <tr>
+            <th>Project ID</th>
+            <th>Project Name</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Project Description</th>
+            <th>Employee Assigned</th>
+        </tr>
+        {% for project in projects %}
+        <tr>
+            <td>{{ project.project_id }}</td>
+            <td>{{ project.project_name }}</td>
+            <td>{{ project.start_date }}</td>
+            <td>{{ project.end_date }}</td>
+            <td>{{ project.project_description }}</td>
+            <td>{{ project.employee.firstname }} {{ project.employee.lastname }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
